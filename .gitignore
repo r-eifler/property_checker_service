@@ -1,0 +1,6 @@
+log
+plans/*
+sas_plan
+uploads/*
+node_modules/*
+.env

@@ -1,5 +1,5 @@
 {
-  "name": "planner_server",
+  "name": "property_check_service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

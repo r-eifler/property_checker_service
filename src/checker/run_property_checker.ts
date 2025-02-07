@@ -77,7 +77,8 @@ function runProcess(
 			//result is written to stout
 			const result: string[] = [];
 			checkProcess.stdout?.on("data", (data) => {
-				result.push(data);
+				console.log("stdout: " + data);
+				result.push(data.toString().trim());
 			});
 
 			checkProcess.on("close", (code) => {
@@ -129,7 +130,7 @@ function sendResults(
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: `Bearer ${process.env.API_KEY}`,
+			Authorization: `Bearer ${process.env.SERVICE_KEY}`,
 		},
 		body: payload,
 	});

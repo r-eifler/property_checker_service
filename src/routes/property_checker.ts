@@ -31,7 +31,7 @@ plannerRouter.post("/check", auth, async (req: Request, res: Response) => {
 
 		res.status(201).send({ id: refId, status: run.status });
 
-		agenda.now("planner call", [refId, run]);
+		agenda.now("checker call", [refId, run]);
 	} catch (err) {
 		console.log(err);
 		res.status(500).send();

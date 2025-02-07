@@ -8,13 +8,15 @@ import type { PropertyCheckRun } from "./domain/plan-run";
 dotenv.config();
 
 const app = express();
-const port = process.env.PLANNER_SERVICE_PORT || 3333;
+const port = process.env.PORT || 3335;
 
 console.log("Debug output: " + process.env.DEBUG_OUTPUT);
 console.log(
 	"folder to temporally store the experiment data: " +
 		process.env.TEMP_RUN_FOLDERS,
 );
+console.log(`property checker: ${process.env.PROPERTY_CHECKER}`);
+console.log(`val: ${process.env.VAL}`);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

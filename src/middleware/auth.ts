@@ -21,7 +21,7 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
 				.send({ error: "Not authorized to access this resource" });
 		}
 
-		if (token !== process.env.PLANNER_KEY) {
+		if (token !== process.env.API_KEY) {
 			console.log("Not authorized: key does not match!");
 			return res
 				.status(401)

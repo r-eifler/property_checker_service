@@ -27,11 +27,10 @@ app.listen(port, () => {
 	console.log(`Server is running on port ${port}`);
 });
 
-const mongodbURL =
-	process.env.PLANNER_MONGO_DB || "localhost:27017/agenda-property_checker";
-console.log("database: " + mongodbURL);
+const mongodbURL = process.env.MONGO_DB || "localhost:27017/agenda-property_checker";
+console.log("Database: " + mongodbURL);
 
-const concurrentRuns = Number(process.env.CONCURRENT_PLANNER_RUNS) || 1;
+const concurrentRuns = Number(process.env.CONCURRENT_RUNS) || 1;
 
 export const agenda = new Agenda({
 	db: { address: mongodbURL, collection: "agendaJobs" },

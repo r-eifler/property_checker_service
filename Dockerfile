@@ -33,7 +33,7 @@ RUN npm install
 RUN npm install -g ts-node
 
 # run
-EXPOSE 3334
+EXPOSE 3335
 
 ENV TEMP_RUN_FOLDERS="/usr/temp"
 

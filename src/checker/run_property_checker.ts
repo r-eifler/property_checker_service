@@ -78,7 +78,14 @@ function runProcess(
 			const result: string[] = [];
 			checkProcess.stdout?.on("data", (data) => {
 				console.log("stdout: " + data);
-				result.push(data.toString().trim());
+				const s: string = data.toString();
+				const parts = s.split('\n')
+				for(const p of parts){
+					const trimmed = p.trim();
+					if(trimmed.length > 0){
+						result.push(trimmed);
+					}
+				}
 			});
 
 			checkProcess.on("close", (code) => {
